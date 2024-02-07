@@ -38,7 +38,7 @@ class PlayList {
         if(this.getSize() >= this.getMaxSize()){
             return false; 
         }
-        tracks[i] = track;
+        tracks[size] = track;
         size++;
         return true;
     }
@@ -88,7 +88,7 @@ class PlayList {
      *  is full, does nothing and returns false. Otherwise, inserts the track and
      *  returns true. */
     public boolean add(int i, Track track) {
-        if(i < 0  || size >= maxSize  || i > size){
+        if((i < 0) || (size >= maxSize)  || (i > size)){
             return false;
         }
         for(int j = size; j  > i; j--){
@@ -103,7 +103,7 @@ class PlayList {
      *  If the list is empty, or the given index is negative or too big for this list, 
      *  does nothing and returns -1. */
     public int remove(int i) {
-        if(size == 0 || i > size || i < 0){
+        if((size == 0) || (i > size) || (i < 0)){
             return -1 ;
         }
         for(int j = i; j < size; j++){
